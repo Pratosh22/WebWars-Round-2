@@ -1,0 +1,295 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+/* Set a background color */
+body {
+  background-color: #222c32;
+}
+h1,
+h2,
+h3,
+h4 {
+  font-family: "Poppins";
+}
+.card p {
+  font-family: "Poppins";
+}
+/* Page Loader */
+#loader {
+  border: 12px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 12px solid #444444;
+  width: 70px;
+  height: 70px;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.center {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+
+#outside {
+  width: 100%;
+  margin: 0 auto;
+  background: #2b343a;
+  padding: 0 10%;
+  border-radius: 2px;
+}
+#inside {
+  margin-top: 3em;
+  margin-bottom: 3em;
+  background: #2b343a;
+}
+header h1 {
+  font-family: "Roboto";
+  margin-top: 5rem;
+  font-size: 3rem;
+  line-height: 1.5;
+  font-weight: 500;
+  color: white;
+}
+.description {
+  text-align: center;
+  padding: 3rem;
+  color: #abaeb3 !important;
+  font-family: "Roboto";
+  font-size: 1.5rem;
+  line-height: 1.5;
+  font-weight: 300;
+  color: white;
+}
+.starting {
+  padding-top: 2.5rem;
+}
+/* CARDS */
+.card {
+  display: flex;
+  place-items: center;
+  height: 80%;
+  text-align: center;
+  background: #242625;
+  border-radius: 10px;
+  box-shadow: 25px 25px 50px #1b1c1b, -25px -25px 50px #2d302f;
+}
+.card-content {
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+  width: 100%;
+}
+.card-header,
+.card-info,
+.card-button {
+  margin-top: 1rem;
+}
+.card:hover {
+  margin-top: -10px;
+  transition: 0.3s all ease-in-out;
+}
+.card-content h3{
+    color:#F7E2E2;
+}
+.card-content p{
+    color:#E8FFC2;
+    padding:0 1rem;
+    line-height:1.5;
+    width:100%;
+}
+/* The actual timeline (the vertical ruler) */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The actual timeline (the vertical ruler) */
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  background-color: #2cb49c;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Container around content */
+.container {
+  padding: 10px 40px;
+  position: relative;
+  background-color: inherit;
+  width: 50%;
+  height: 300px;
+}
+
+/* The circles on the timeline */
+.container::after {
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  right: -17px;
+  background-color: #673ab7;
+  border: 4px solid #673ab7;
+  top: 15px;
+  border-radius: 50%;
+  z-index: 1;
+}
+
+/* Place the container to the left */
+.left {
+  left: 0;
+}
+
+/* Place the container to the right */
+.right {
+  left: 50%;
+}
+
+/* Add arrows to the left container (pointing right) */
+.left::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  right: 30px;
+  border: medium solid white;
+  border-width: 10px 0 10px 10px;
+  border-color: transparent transparent transparent white;
+}
+
+/* Add arrows to the right container (pointing left) */
+.right::before {
+  content: " ";
+  height: 0;
+  position: absolute;
+  top: 22px;
+  width: 0;
+  z-index: 1;
+  left: 30px;
+  border: medium solid white;
+  border-width: 10px 10px 10px 0;
+  border-color: transparent white transparent transparent;
+}
+
+/* Fix the circle for containers on the right side */
+.right::after {
+  left: -16px;
+}
+
+/* The actual content */
+.content {
+  padding: 20px 30px;
+  background-color: white;
+  position: relative;
+  border-radius: 6px;
+}
+.fas {
+  width: 100%;
+}
+.cd-top {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4rem;
+}
+.cd-top--is-visible {
+  visibility: visible;
+  opacity: 1;
+}
+
+.cd-top--fade-out {
+  opacity: 0.5;
+}
+/* BUTTONS*/
+span {
+  position: relative;
+  display: inline-flex;
+  width: 180px;
+  height: 55px;
+  margin: 0 15px;
+  perspective: 1000px;
+}
+span a {
+  font-size: 19px;
+  letter-spacing: 1px;
+  transform-style: preserve-3d;
+  transform: translateZ(-25px);
+  transition: transform 0.25s;
+  font-family: "Montserrat", sans-serif;
+}
+span a:before,
+span a:after {
+  position: absolute;
+  content: "Read More";
+  height: 55px;
+  width: 180px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 5px solid black;
+  box-sizing: border-box;
+  border-radius: 5px;
+}
+span a:before {
+  color: #fff;
+  background: #000;
+  transform: rotateY(0deg) translateZ(25px);
+}
+span a:after {
+  color: #000;
+  transform: rotateX(90deg) translateZ(25px);
+}
+span a:hover {
+  transform: translateZ(-25px) rotateX(-90deg);
+}
+
+/* Media queries - Responsive timeline on screens less than 600px wide */
+@media screen and (max-width: 600px) {
+  .timeline::after {
+    left: 31px;
+  }
+
+  .container {
+    width: 100%;
+    padding-left: 70px;
+    padding-right: 25px;
+  }
+  .container::before {
+    left: 60px;
+    border: medium solid white;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent white transparent transparent;
+  }
+
+  .left::after,
+  .right::after {
+    left: 15px;
+  }
+  .right {
+    left: 0%;
+  }
+  .card h3{
+      font-size:1rem;
+  }
+  .card{
+      width:100%;
+   }
+}
